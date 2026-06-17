@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autorização — Oração da Bíblia Diária</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="marca">Oração da Bíblia Diária</div>
+    <div class="linha"></div>
+  </header>
+
+  <h1 id="titulo">Autorização concluída ✅</h1>
+
+  <div class="card">
+    <p id="msg">Copie o código abaixo e cole no programa, na linha
+    <em>"Cole aqui o código"</em>:</p>
+    <textarea class="code" id="code" rows="3" readonly onclick="this.select()"></textarea>
+    <p style="margin-top:14px">
+      <button class="btn" onclick="copiar()">Copiar código</button>
+    </p>
+    <p class="dim" id="erro"></p>
+  </div>
+
+  <footer>Pode fechar esta janela depois de copiar.</footer>
+</div>
+
+<script>
+  // Lê ?code=...&state=... que o TikTok devolve e mostra para copiar.
+  var p = new URLSearchParams(window.location.search);
+  var code = p.get("code");
+  var err = p.get("error") || p.get("error_description");
+  var box = document.getElementById("code");
+  if (code) {
+    box.value = code;
+    box.focus(); box.select();
+  } else {
+    document.getElementById("titulo").textContent = "Algo deu errado";
+    document.getElementById("msg").textContent =
+      "Não recebemos o código de autorização. Tente o login novamente.";
+    document.getElementById("erro").textContent = err ? ("Erro: " + err) : "";
+    box.style.display = "none";
+  }
+  function copiar(){
+    box.select(); document.execCommand("copy");
+    var b = document.querySelector(".btn"); b.textContent = "Copiado!";
+    setTimeout(function(){ b.textContent = "Copiar código"; }, 1500);
+  }
+</script>
+</body>
+</html>

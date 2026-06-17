@@ -1,0 +1,30 @@
+:root{
+  --azul:#13233F; --azul2:#0d1830; --dourado:#C9A24B; --claro:#F5F2E8;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Georgia,"Times New Roman",serif; color:var(--claro);
+  background:linear-gradient(160deg,var(--azul) 0%,var(--azul2) 100%);
+  min-height:100vh; line-height:1.7;
+}
+.wrap{max-width:760px; margin:0 auto; padding:48px 22px 80px}
+header{text-align:center; padding:28px 0 8px}
+header .marca{font-size:30px; font-weight:bold; letter-spacing:.5px}
+header .arroba{color:var(--dourado); font-size:16px; margin-top:4px}
+header .linha{width:120px; height:3px; background:var(--dourado); margin:18px auto}
+h1{font-size:26px; margin:30px 0 6px}
+h2{font-size:19px; color:var(--dourado); margin:28px 0 8px}
+p,li{font-size:16px; color:#e7e3d6}
+a{color:var(--dourado)}
+.card{background:rgba(255,255,255,.04); border:1px solid rgba(201,162,75,.25);
+  border-radius:14px; padding:26px 26px 8px; margin-top:18px}
+.nav{text-align:center; margin-top:30px}
+.nav a{display:inline-block; margin:0 12px}
+footer{text-align:center; color:#9aa3b5; font-size:13px; margin-top:50px}
+.dim{color:#9aa3b5; font-size:14px}
+.btn{display:inline-block; background:var(--dourado); color:#1a1a1a; font-weight:bold;
+  text-decoration:none; padding:12px 22px; border-radius:10px; border:none; cursor:pointer;
+  font-size:16px; font-family:inherit}
+.code{width:100%; font-family:Consolas,monospace; font-size:15px; padding:14px;
+  border-radius:10px; border:1px solid var(--dourado); background:#0b1426; color:var(--claro);
+  margin-top:10px}
